@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PanelFader : MonoBehaviour
@@ -17,12 +15,12 @@ public class PanelFader : MonoBehaviour
         this._callbackName = callbackName;
         // this only happens once per scene, so we don't need to store it on the Class
             // "FADE_OUT" argument must match Trigger on Unity Animation (e.g. "FadeOut.anim")
-        GetComponent<Animator>().SetTrigger("FADE_OUT");
+        GetComponent<Animator>().SetTrigger(nameof(Triggers.FADE_OUT));
     }
 
     // Callback Function I added to FadeOut Event (animation event Keyframe)
     public void OnFadeOutComplete()
     {
-        ANMATION_COMPLETE.Invoke();
+        ANMATION_COMPLETE.Invoke(this._callbackName);
     }
 }
