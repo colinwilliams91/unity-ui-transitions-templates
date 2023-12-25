@@ -18,7 +18,7 @@ public class PanelFader : MonoBehaviour
         GetComponent<Animator>().SetTrigger(nameof(Triggers.FADE_OUT));
     }
 
-    // Callback Function I added to FadeOut Event (animation event Keyframe)
+    // Callback Function added to FadeOut Event (animation event Keyframe)
     public void OnFadeOutComplete()
     {
         ANMATION_COMPLETE.Invoke(this._callbackName);
